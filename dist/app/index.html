@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="spBlogger">
+	<head>
+		<meta charset="utf-8">
+		<base href="/">
+		<title>The Single Page Blogger</title>
+		<link rel="stylesheet" href="built/app.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<br/>
+			<div class="jumbotron text-center">
+				<h1>{{'TITLE' | translate}}</h1>
+				<p>{{'SUBTITLE' | translate}}</p>
+				
+					<div class="btn-group btn-toggle">
+					<button class="btn btn-xs btn-default" ng-class="{en:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('en')" >English</button>
+					<button class="btn btn-xs btn-primary" ng-class="{de:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('de')">German</button>
+					</div>
+				
+			</div>
+			
+			<div class="ui-view-cont">
+			<div ui-view></div>
+			</div>
+			
+				
+
+			
+			<div class="row footer">
+				<div class="col-xs-12 text-center">
+					<p>The Single Page Blogger <app-version/></p>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script src="built/app.min.js"></script>
+	
+</html>
